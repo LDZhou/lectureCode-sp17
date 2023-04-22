@@ -39,12 +39,18 @@ public class SLList {
 
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
+        
+        size += 1;
         IntNode p = first;
 
         /* Advance p to the end of the list. */
-        while (p.next != null) {
+        if (size == 1){
+            p = new IntNode(x, null);
+        }else{
+            while (p.next != null) {
             p = p.next;
         }
+            
         p.next = new IntNode(x, null);
     }
 
